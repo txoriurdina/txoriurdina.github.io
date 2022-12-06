@@ -1,11 +1,11 @@
-  * {
+* {
     font-family: espiritu, sans-serif;
     font-weight: 400;
     font-style: normal;
   }
 
   html {
-    background-image: url("/assets/bg.jpg");
+    background-image: url("assets/bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +19,7 @@
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    cursor: url("assets/ufo.png"), auto;
   }
   
   .main {
@@ -54,6 +55,7 @@
     box-shadow: inset 0 0 0 200px rgba(255,255,255,0.08);
     padding: 32px 32px;
     padding-top: 40px;
+    cursor: default;
   }
 
   @media only screen and (max-width: 1200px) {
@@ -78,6 +80,7 @@
     padding: 12px 32px;
     padding-top: 19px;
     transform: translateY(110px);
+    cursor: pointer;
   }
 
   button:hover {
@@ -88,3 +91,19 @@
     box-shadow: 0px 0px 0 0 black;
     transform: translate(5px, 115px);
   }
+
+.links {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  color: #ccc;
+}
+
+.links a {
+  color: #ccc;
+}
+
+.links span {
+  transform: translateY(88%);
+}
