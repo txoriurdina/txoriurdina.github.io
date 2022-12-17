@@ -2,24 +2,96 @@
 <html lang="eng">
 <head>
   <title>Txori Urdina Hub</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/styles/assets/favicon.png">
   <meta name="Txori official website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/styles/assets/favicon.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251427550804861"
      crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://use.typekit.net/ehr0aem.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style-index.css" />
 </head>
 <body>
-  <div class="main">
-      <div class="title">
-        <h1>TXORI URDINA</h1>
-        <button onclick="window.location.href='https://txori.lubinpappalardo.repl.co/menu.html';">ENTER</button>
-      </div>
-  </div>
+  
+<main>
+<h1>TXORI URDINA</h1>
+<button id="enter" onclick="window.location.href='https://txori.lubinpappalardo.repl.co/menu.html';">ENTER</button>
+<img id="img" src="https://cdn-icons-png.flaticon.com/512/616/616500.png" style="display: none;">
+</main>
+  
   <div class="links">
     <p><span class="material-symbols-outlined">info</span><br>  Also visit : <a href="https://totob12.github.io/index.html">Totob12 website</a></p>
   </div>
+
 </body>
+
+  
+<script>
+  
+var cursor = document.createElement('img');
+cursor.src = 'styles/assets/ufo.png';
+cursor.style.position = 'absolute';
+cursor.style.display = 'none';
+cursor.style.zIndex = '9999';
+cursor.style.transform = 'translate(-50%, -50%)';
+cursor.style.pointerEvents = 'none';
+cursor.style.height = '35px';
+cursor.style.width = '35px';
+document.body.appendChild(cursor);
+document.addEventListener('mousemove', function(e) {
+cursor.style.left = e.pageX + 'px';
+cursor.style.top = e.pageY + 'px';
+});
+
+document.addEventListener('mouseleave', function(e) {
+  cursor.style.display = 'none';
+});
+document.addEventListener('mouseenter', function(e) {
+  cursor.style.display = 'block';
+});
+
+var button = document.getElementById('enter');
+
+button.addEventListener('click', function(e) {
+  button.style.display = 'none';
+  var image = document.getElementById('img');
+  image.style.display = 'block';
+  image.style.zIndex = '9999';
+});
+
+document.body.onclick = function(e) {
+  var ball = document.createElement('img');
+  var button = document.getElementById('enter');
+  ball.style.width = '15px';
+  ball.style.height = '15px';
+  ball.src = 'styles/assets/cricket-ball.png';
+  ball.style.borderRadius = '50px';
+  ball.style.transform = 'translate(50%, 50%)';
+  ball.style.position = 'absolute';
+  ball.style.top = e.clientY + 'px';
+  ball.style.left = e.clientX + 'px';
+  document.body.appendChild(ball);
+  var x = e.clientX;
+  var y = e.clientY;
+  var dx = 4;
+  var dy = 4;
+  var timer = setInterval(function() {
+    x += dx;
+    y += dy;
+    ball.style.top = y + 'px';
+    ball.style.left = x + 'px';
+    if (x > window.innerWidth || x < 0) {
+      dx *= -1;
+    }
+    if (y > window.innerHeight || y < 0) {
+      dy *= -1;
+    }
+  }, 10);
+  setTimeout(function() {
+    clearInterval(timer);
+    document.body.removeChild(ball);
+  }, 2000);
+}
+  
+</script>
