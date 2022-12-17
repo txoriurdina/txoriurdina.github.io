@@ -11,63 +11,58 @@
     background-size: cover;
     height: 100%;
     width: 100%;
+    cursor: none;
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
   }
 
   body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    cursor: url("assets/ufo.png"), auto;
-  }
-  
-  .main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
   }
 
-  .title {
-    position: relative;
-    text-align: center;
+  main {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   h1 {
-    position: relative;
     font-size: 80px;
     text-align: center;
     color: white;
     margin: 0;
-    width: 50%;
-    vertical-align: baseline;
+    width: 325px;
     text-shadow: 5px 5px black;
     border: 2px solid white;
-    border-image: linear-gradient(to bottom left, cyan, rgba(0, 0, 0, 0), purple) 1;
-    border-image-radius: 12px;
-    background: linear-gradient(to bottom left, rgba(0,255,255, 0.2), rgba(0, 0, 0, 0), rgba(138,43,226, 0.2));
+    border-image: 
+      linear-gradient(
+        to bottom left,
+        cyan, 
+        rgba(0, 0, 0, 0), 
+        purple) 1;
+      background: 
+        linear-gradient(
+          to bottom left, 
+          rgba(0,255,255, 0.2), 
+          rgba(0, 0, 0, 0), 
+          rgba(138,43,226, 0.2));
+    
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.08);
-    padding: 32px 32px;
-    padding-top: 40px;
-    cursor: default;
-  }
-
-  @media only screen and (max-width: 1200px) {
-    h1 {
-      width: 75%;
-    }
-  }
-  
-  @media only screen and (max-width: 800px) {
-    h1 {
-      width: 100%;
-    }
+    box-shadow: inset 0 0 0 200px rgba(255 255 255 / 0.08);
+    padding: 24px;
+    padding-top: 32px;
   }
 
   button {
@@ -79,8 +74,16 @@
     font-size: 24px;
     padding: 12px 32px;
     padding-top: 19px;
+    z-index: 8888;
+    cursor: none;
     transform: translateY(110px);
-    cursor: pointer;
+  }
+
+  #img {
+    width: 100px; 
+    height: 100px;
+    position: absolute; 
+    transform: translateY(110px);
   }
 
   button:hover {
@@ -94,6 +97,7 @@
 
 .links {
   display: flex;
+  position: absolute;
   height: 100%;
   justify-content: center;
   align-items: flex-end;
